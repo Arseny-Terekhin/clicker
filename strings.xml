@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Click</string>
+    <string name="txt_click">кликов</string>
+    <string name="btn_click">увеличить количество кликов</string>
+</resources>
