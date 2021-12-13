@@ -12,6 +12,24 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    @Override
+    protected void onResume() {
+        super.onResume();
+        resetUI();
+    }
+    @Override
+    protected void onSaveInstanceState(Bundle outstate) {
+        super.onSaveInstanceState(outstate);
+        outstate.putInt("txt_counter", counter);
+    }
+    @Override
+    protected void onRestoreInstanceState(Bundle savedInstanceState) {
+        super.onRestoreInstanceState(savedInstanceState);
+        if (savedInstanceState != null &&
+                savedInstanceState.containsKey("txt_counter")) {
+            counter = savedInstanceState.getInt("txt_counter");
+        }
+    }
 
     public void onClickBtnAddStudents(View view) {
         counter++;
