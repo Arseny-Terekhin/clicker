@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
     }
+    
     @Override
     protected void onResume() {
         super.onResume();
@@ -45,5 +46,9 @@ public class MainActivity extends AppCompatActivity {
             counterView.setTextSize(15);
         }
 
+    }
+    private void resetUI() {
+        TextView counterView = (TextView)findViewById(R.id.txt_counter);
+        counterView.setText(""+  counter);
     }
 }
